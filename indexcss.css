@@ -59,6 +59,10 @@ img{
 	width: 150px;
 }
 
+.pull-right{
+	float: right;
+
+}
 #contact-img{
 	border-radius: 75%;
 	width: 100px;
