@@ -7,7 +7,31 @@
 <head>
 <link rel="stylesheet" type="text/css" href="indexcss.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+ <script>
+  function calculator(){
+    const radiSelect = document.getElementById("valueForCal").value;
+    const n = document.getElementById("num").value;
+    switch(radiSelect){
 
+      case "Fibanoci":  
+         
+         let a = 0, b = 1, f = 1;
+        for(let i = 2; i <= n; i++){
+             f = a + b;
+             a = b;
+             b = f;
+         }
+       document.getElementById("result").innerHTML= f;
+         break;
+     case "Factorial" :
+     document.getElementById("result").innerHTML="yet to write function";
+     break;
+  }
+  }
+  
+    
+
+</script>
 </head>
 <body>
 
@@ -27,27 +51,31 @@
 
 
 <body>
-<form method="get">
+ <p>Which one you want to calculate : </p>
+<form id="valueForCal">
+ 
+   
+    <input type="radio" name="calculation" value="factorial" >Factorial<br>
+    <input type="radio" name="calculation" value="Fibanoci" > Fibanoci<br>
+    <input type="radio" name="calculation" value="DobCal" > Date Calculation
+ 
+</form>
  <div class="form-group">  
      
-    <center> <div>Enter the Value: </div></center><input type="number" name="number" id="number" class="form-control" placeholder="Number" /> 
+    <center> Enter the Value: </center><input type="number" name="number" id="num" class="form-control" value="" /> 
   </div>
-    <div class="form-group">  
+  <div class="form-group">  
   
-        <button type="submit" class="btn btn-default" >Find</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="calculator()">Find</button>&nbsp;&nbsp;&nbsp;
     
   </div>  
-  
-</form>
+  <p id="result"></p>
+ 
+
 </body>
+</div>
 
 
 
 <footer><h4> CopyRights </h4></footer>
-<h1></h1>
-<p></p>
-
-
-</div>
-</body>
 </html>
